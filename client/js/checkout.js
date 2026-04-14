@@ -1,6 +1,6 @@
 // checkout.js
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://online-course-58y2.onrender.com/api';
 
 document.addEventListener('DOMContentLoaded', () => {
     // Load course from localStorage

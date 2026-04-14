@@ -38,7 +38,7 @@
 
             try {
                 // Fetch dynamic order details from backend
-                const res = await axios.get(`http://localhost:5000/api/order/${orderId}`);
+                const res = await axios.get(`https://online-course-58y2.onrender.com/api/order/${orderId}`);
                 
                 if (res.data.success) {
                     const { order, course } = res.data;
@@ -71,7 +71,7 @@
                         <p class="mb-4 text-muted">We have successfully sent your receipt and access instructions to your email inbox!</p>
                         
                         <div style="display: flex; gap: 1rem; justify-content: center;">
-                            <button id="download-btn" class="btn btn-outline" onclick="window.location.href='http://localhost:5000/api/download-receipt/${order._id}'">Download Receipt</button>
+                            <button id="download-btn" class="btn btn-outline" onclick="window.location.href='https://online-course-58y2.onrender.com/api/download-receipt/${order._id}'">Download Receipt</button>
                             <a href="index.html" class="btn btn-primary">Start Learning</a>
                         </div>
                     `;
@@ -84,7 +84,7 @@
                     <p class="mb-4 text-muted">Thank you for your purchase. A receipt has been sent to your email.</p>
                     
                     <div style="display: flex; gap: 1rem; justify-content: center;">
-                        <button id="download-btn" class="btn btn-outline" onclick="window.location.href='http://localhost:5000/api/download-receipt/${orderId}'">Download Receipt</button>
+                        <button id="download-btn" class="btn btn-outline" onclick="window.location.href='https://online-course-58y2.onrender.com/api/download-receipt/${orderId}'">Download Receipt</button>
                         <a href="index.html" class="btn btn-primary">Go to Home</a>
                     </div>
                 `;
