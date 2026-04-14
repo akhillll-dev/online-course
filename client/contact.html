@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - EduScale</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">EduScale.</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="container" style="max-width: 600px;">
+        <h1 class="text-center">Get In Touch</h1>
+        <p class="text-center mb-4 text-muted">We'd love to hear from you. Send us a message below.</p>
+        
+        <form id="contact-form" class="summary-card">
+            <div class="form-group">
+                <label for="contact-name">Name</label>
+                <input type="text" id="contact-name" class="form-control" placeholder="Your Name">
+                <p id="name-error" class="error-text">Name is required.</p>
+            </div>
+            <div class="form-group">
+                <label for="contact-email">Email</label>
+                <input type="email" id="contact-email" class="form-control" placeholder="your@email.com">
+                <p id="email-error" class="error-text">Please enter a valid email address.</p>
+            </div>
+            <div class="form-group">
+                <label for="contact-message">Message</label>
+                <textarea id="contact-message" class="form-control" rows="5" placeholder="How can we help?"></textarea>
+                <p id="msg-error" class="error-text">Message cannot be empty.</p>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+            <p id="success-msg" class="text-center mt-4" style="color: var(--success-color); display: none;">Your message has been sent!</p>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 EduScale. All rights reserved.</p>
+    </footer>
+
+    <script src="./js/contact.js"></script>
+</body>
+</html>

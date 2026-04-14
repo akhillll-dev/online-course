@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - EduScale</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">EduScale.</a>
+    </nav>
+
+    <main class="container">
+        <h2>Secure Checkout</h2>
+
+        <div class="checkout-wrapper">
+            <!-- Checkout Form -->
+            <div class="checkout-form">
+                <form id="payment-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" class="form-control" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" required placeholder="john@example.com">
+                    </div>
+                    <div style="display: flex; gap: 1rem;">
+                        <button type="submit" class="btn btn-primary" id="pay-btn" style="flex: 1;">Pay Now</button>
+                        <button type="button" class="btn btn-outline" id="simulate-btn" style="flex: 1;" title="Use this to bypass Razorpay and preview success UI">Simulate Success</button>
+                    </div>
+                    <p id="loading-msg" class="text-center mt-4" style="display: none; color: var(--primary-color);">Processing payment, please wait...</p>
+                </form>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="summary-card">
+                <h3>Order Summary</h3>
+                <hr style="border-color: var(--border-color); margin: 1rem 0;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                    <span id="course-title-display">Loading...</span>
+                    <span id="course-price-display" style="font-weight: bold;">--</span>
+                </div>
+                <hr style="border-color: var(--border-color); margin: 1rem 0;">
+                <div style="display: flex; justify-content: space-between; font-size: 1.2rem; font-weight: bold;">
+                    <span>Total</span>
+                    <span id="course-total-display">--</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Payment Confirmation Modal -->
+    <div id="payment-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 999; justify-content: center; align-items: center; text-align: center;">
+        <div style="background: var(--surface-color); padding: 3rem; border-radius: 12px; border: 1px solid var(--success-color); animation: fadeIn 0.3s ease;">
+            <div style="font-size: 4rem; color: var(--success-color); margin-bottom: 1rem;">✓</div>
+            <h2 style="color: var(--success-color); margin-bottom: 1rem;">Payment Successful!</h2>
+            <p>Your transaction has been verified.</p>
+            <p class="text-muted mt-4">Redirecting to order details...</p>
+        </div>
+    </div>
+
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
+
+    <script src="./js/checkout.js"></script>
+</body>
+</html>

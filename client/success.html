@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful - EduScale</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">EduScale.</a>
+    </nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <main class="container">
+        <div class="status-card" id="success-container" style="max-width: 600px;">
+            <div class="status-icon success">✓</div>
+            <h2>Payment Successful!</h2>
+            <p class="mb-4 text-muted">Thank you for your purchase. We are retrieving your enrollment details...</p>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const orderId = localStorage.getItem('lastOrderId');
+            const container = document.getElementById('success-container');
+
+            if (!orderId) {
+                container.innerHTML = `
+                    <div class="status-icon error">✗</div>
+                    <h2>No Order Found</h2>
+                    <p class="text-muted">We couldn't find your recent order details.</p>
+                    <a href="index.html" class="btn btn-primary mt-4">Go to Home</a>
+                `;
+                return;
+            }
+
+            try {
+                // Fetch dynamic order details from backend
+                const res = await axios.get(`http://localhost:5000/api/order/${orderId}`);
+                
+                if (res.data.success) {
+                    const { order, course } = res.data;
+                    
+                    container.innerHTML = `
+                        <div class="status-icon success">✓</div>
+                        <h2>Enrollment Confirmed!</h2>
+                        <p class="text-muted" style="margin-bottom: 2rem;">Hi <strong>${order.userName}</strong>, thank you for enrolling.</p>
+                        
+                        <div style="background: var(--bg-color); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color); text-align: left; margin-bottom: 2rem;">
+                            <h4 style="color: var(--primary-color); margin-bottom: 1rem;">Booking Summary</h4>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span class="text-muted">Course:</span>
+                                <strong>${course.title}</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span class="text-muted">Amount Paid:</span>
+                                <strong>₹${order.amount}</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span class="text-muted">Email Delivered To:</span>
+                                <strong>${order.userEmail}</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span class="text-muted">Order ID:</span>
+                                <span style="font-size: 0.85rem; color: var(--text-muted);">${order._id}</span>
+                            </div>
+                        </div>
+
+                        <p class="mb-4 text-muted">We have successfully sent your receipt and access instructions to your email inbox!</p>
+                        
+                        <div style="display: flex; gap: 1rem; justify-content: center;">
+                            <button id="download-btn" class="btn btn-outline" onclick="window.location.href='http://localhost:5000/api/download-receipt/${order._id}'">Download Receipt</button>
+                            <a href="index.html" class="btn btn-primary">Start Learning</a>
+                        </div>
+                    `;
+                }
+            } catch (err) {
+                console.error(err);
+                container.innerHTML = `
+                    <div class="status-icon success">✓</div>
+                    <h2>Payment Successful!</h2>
+                    <p class="mb-4 text-muted">Thank you for your purchase. A receipt has been sent to your email.</p>
+                    
+                    <div style="display: flex; gap: 1rem; justify-content: center;">
+                        <button id="download-btn" class="btn btn-outline" onclick="window.location.href='http://localhost:5000/api/download-receipt/${orderId}'">Download Receipt</button>
+                        <a href="index.html" class="btn btn-primary">Go to Home</a>
+                    </div>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>
