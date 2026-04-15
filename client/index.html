@@ -3,18 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduScale - Premium Online Courses</title>
-    <meta name="description" content="Master development with our premium full-stack courses.">
+    <title>Online Course Platform | Learn Skills Fast</title>
+    <meta name="description" content="Join our online course platform to learn programming, AI, and tech skills with real-world projects.">
+    <meta name="keywords" content="online courses, programming, AI, web development, coding">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://online-course-a5st.vercel.app/">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title" content="Online Course Platform">
+    <meta property="og:description" content="Learn AI, coding, and tech skills easily">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://online-course-a5st.vercel.app/">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Online Course Platform">
+    <meta name="twitter:description" content="Learn AI, coding, and tech skills easily">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "Online Course Platform",
+        "url": "https://online-course-a5st.vercel.app/",
+        "description": "Join our online course platform to learn programming, AI, and tech skills with real-world projects.",
+        "sameAs": []
+    }
+    </script>
+
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <nav class="navbar">
-        <a href="index.html" class="logo">EduScale.</a>
+    <nav class="navbar" aria-label="Main navigation">
+        <a href="/" class="logo">EduScale.</a>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/contact.html">Contact</a></li>
         </ul>
     </nav>
 
@@ -26,74 +53,75 @@
     </header>
 
     <main class="container">
-
+        <section aria-label="Available courses">
         <div class="course-grid">
             <!-- Course 1 -->
-            <div class="course-card">
-                <img src="https://picsum.photos/seed/course1/800/500" alt="MERN Stack Masterclass" class="course-image">
+            <article class="course-card">
+                <img src="https://picsum.photos/seed/course1/800/500" alt="MERN Stack Masterclass" class="course-image" loading="lazy" width="800" height="500">
                 <h3 class="course-title">MERN Stack Masterclass</h3>
                 <p class="course-desc">Learn MongoDB, Express, React, and Node.js from scratch and build production-ready applications.</p>
                 <div class="course-footer">
                     <span class="course-price">₹4,999</span>
                     <button class="btn btn-primary" onclick="buyCourse('650a3b2b4f1a25c1b5', 'MERN Stack Masterclass', 4999)">Buy Now</button>
                 </div>
-            </div>
+            </article>
 
             <!-- Course 2 -->
-            <div class="course-card">
-                <img src="https://picsum.photos/seed/course2/800/500" alt="Advanced Python Architecture" class="course-image">
+            <article class="course-card">
+                <img src="https://picsum.photos/seed/course2/800/500" alt="Advanced Python Architecture" class="course-image" loading="lazy" width="800" height="500">
                 <h3 class="course-title">Advanced Python Architecture</h3>
                 <p class="course-desc">Deep dive into Python design patterns, FastAPI, and asynchronous programming.</p>
                 <div class="course-footer">
                     <span class="course-price">₹3,499</span>
                     <button class="btn btn-primary" onclick="buyCourse('650a3b2b4f1a25c1b6', 'Advanced Python Architecture', 3499)">Buy Now</button>
                 </div>
-            </div>
+            </article>
 
             <!-- Course 3 -->
-            <div class="course-card">
-                <img src="https://picsum.photos/seed/course3/800/500" alt="UI/UX Design Patterns" class="course-image">
+            <article class="course-card">
+                <img src="https://picsum.photos/seed/course3/800/500" alt="UI/UX Design Patterns" class="course-image" loading="lazy" width="800" height="500">
                 <h3 class="course-title">UI/UX Design Patterns</h3>
                 <p class="course-desc">Create stellar user experiences and beautiful interfaces using Figma and modern CSS.</p>
                 <div class="course-footer">
                     <span class="course-price">₹2,999</span>
                     <button class="btn btn-primary" onclick="buyCourse('650a3b2b4f1a25c1b7', 'UI/UX Design Patterns', 2999)">Buy Now</button>
                 </div>
-            </div>
+            </article>
 
             <!-- Course 4 -->
-            <div class="course-card">
-                <img src="https://picsum.photos/seed/course4/800/500" alt="Complete DevOps Bootcamp" class="course-image">
+            <article class="course-card">
+                <img src="https://picsum.photos/seed/course4/800/500" alt="Complete DevOps Bootcamp" class="course-image" loading="lazy" width="800" height="500">
                 <h3 class="course-title">Complete DevOps Bootcamp</h3>
                 <p class="course-desc">Master continuous integration, delivery, Docker, Kubernetes, and cloud deployments.</p>
                 <div class="course-footer">
                     <span class="course-price">₹5,499</span>
                     <button class="btn btn-primary" onclick="buyCourse('650a3b2b4f1a25c1b8', 'Complete DevOps Bootcamp', 5499)">Buy Now</button>
                 </div>
-            </div>
+            </article>
 
             <!-- Course 5 -->
-            <div class="course-card">
-                <img src="https://picsum.photos/seed/course5/800/500" alt="Data Science & Machine Learning" class="course-image">
-                <h3 class="course-title">Data Science & Machine Learning</h3>
+            <article class="course-card">
+                <img src="https://picsum.photos/seed/course5/800/500" alt="Data Science &amp; Machine Learning" class="course-image" loading="lazy" width="800" height="500">
+                <h3 class="course-title">Data Science &amp; Machine Learning</h3>
                 <p class="course-desc">Build predictive models with Python, Pandas, Scikit-Learn, and TensorFlow.</p>
                 <div class="course-footer">
                     <span class="course-price">₹4,499</span>
-                    <button class="btn btn-primary" onclick="buyCourse('650a3b2b4f1a25c1b9', 'Data Science & Machine Learning', 4499)">Buy Now</button>
+                    <button class="btn btn-primary" onclick="buyCourse('650a3b2b4f1a25c1b9', 'Data Science &amp; Machine Learning', 4499)">Buy Now</button>
                 </div>
-            </div>
+            </article>
 
             <!-- Course 6 -->
-            <div class="course-card">
-                <img src="https://picsum.photos/seed/course6/800/500" alt="Modern Next.js & React" class="course-image">
-                <h3 class="course-title">Modern Next.js & React</h3>
+            <article class="course-card">
+                <img src="https://picsum.photos/seed/course6/800/500" alt="Modern Next.js &amp; React" class="course-image" loading="lazy" width="800" height="500">
+                <h3 class="course-title">Modern Next.js &amp; React</h3>
                 <p class="course-desc">Build server-side rendered, highly optimized web applications with Next.js 14.</p>
                 <div class="course-footer">
                     <span class="course-price">₹3,999</span>
-                    <button class="btn btn-primary" onclick="buyCourse('650a3b2b4f1a25c1b0', 'Modern Next.js & React', 3999)">Buy Now</button>
+                    <button class="btn btn-primary" onclick="buyCourse('650a3b2b4f1a25c1b0', 'Modern Next.js &amp; React', 3999)">Buy Now</button>
                 </div>
-            </div>
+            </article>
         </div>
+        </section>
     </main>
 
     <footer>
