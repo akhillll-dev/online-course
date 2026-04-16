@@ -7,11 +7,17 @@
     <title>Blog</title>
     <meta name="description" content="">
     <link rel="stylesheet" href="./css/style.css">
+
+    ```
+    <!-- IMPORTANT: load data first -->
     <script src="./data.js"></script>
+    ```
+
 </head>
 
 <body>
 
+    ```
     <nav class="navbar">
         <a href="blog.html">← Back to Blog</a>
     </nav>
@@ -21,29 +27,43 @@
     </main>
 
     <script>
-        const params = new URLSearchParams(window.location.search);
-        const slug = params.get("slug");
-
-        const blog = blogs.find(b => b.slug === slug);
-
         const container = document.getElementById("blog-content");
 
-        if (blog) {
-            document.title = blog.title;
-
-            document.querySelector('meta[name="description"]')
-                .setAttribute("content", blog.description);
-
-            container.innerHTML = `
-      <h1>${blog.title}</h1>
-      <img src="${blog.image}" style="width:100%">
-      <p>${blog.description}</p>
-      <div>${blog.content}</div>
-    `;
+        // ✅ check if data loaded
+        if (typeof blogs === "undefined") {
+            container.innerHTML = "<h2>Error: Blogs not loaded</h2>";
         } else {
-            container.innerHTML = "<h2>Blog not found</h2>";
+
+            const params = new URLSearchParams(window.location.search);
+            const slug = params.get("slug");
+
+            // ✅ redirect if no slug
+            if (!slug) {
+                window.location.href = "blog.html";
+            }
+
+            // ✅ safe find
+            const blog = blogs.find(b => b && b.slug === slug);
+
+            if (blog) {
+                document.title = blog.title;
+
+                const meta = document.querySelector('meta[name="description"]');
+                if (meta) meta.setAttribute("content", blog.description);
+
+                container.innerHTML = `
+                <h1>${blog.title}</h1>
+                <img src="${blog.image}" style="width:100%; max-height:400px; object-fit:cover;">
+                <p>${blog.description}</p>
+                <div>${blog.content}</div>
+            `;
+            } else {
+                container.innerHTML = "<h2>Blog not found</h2>";
+            }
         }
     </script>
+    ```
+
 </body>
 
 </html>
