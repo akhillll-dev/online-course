@@ -1,57 +1,42 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - EduScale</title>
+    <meta name="description" content="Explore coding, AI, and tech blogs.">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="data.js"></script>
 </head>
+
 <body>
+
     <nav class="navbar">
         <a href="index.html" class="logo">EduScale.</a>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
     </nav>
 
     <main class="container">
-        <h1>Latest Articles</h1>
-        
-        <div class="course-grid">
-            <div class="course-card">
-                <img src="https://picsum.photos/seed/blog1/800/500" alt="React Code" class="course-image">
-                <h3 class="course-title">10 Tips for Better React Code</h3>
-                <p class="course-desc">Enhance your React.js skills with these simple structural refactoring tips.</p>
-                <div class="course-footer">
-                    <a href="blog-post-1.html" class="btn btn-outline" style="width: 100%; text-align: center;">Read More</a>
-                </div>
-            </div>
+        <h1>Latest Blogs</h1>
 
-            <div class="course-card">
-                <img src="https://picsum.photos/seed/blog2/800/500" alt="Tech Interviews" class="course-image">
-                <h3 class="course-title">Cracking the Tech Interview</h3>
-                <p class="course-desc">A comprehensive guide on how to prepare for Top-Tier Software Engineering roles.</p>
-                <div class="course-footer">
-                    <a href="blog-post-2.html" class="btn btn-outline" style="width: 100%; text-align: center;">Read More</a>
-                </div>
-            </div>
-
-            <div class="course-card">
-                <img src="https://picsum.photos/seed/blog3/800/500" alt="CSS Mastery" class="course-image">
-                <h3 class="course-title">Mastering CSS Variables</h3>
-                <p class="course-desc">Learn how to build a dynamic theming engine using native CSS variables.</p>
-                <div class="course-footer">
-                    <a href="blog-post-3.html" class="btn btn-outline" style="width: 100%; text-align: center;">Read More</a>
-                </div>
-            </div>
-        </div>
+        <div id="blog-container" class="course-grid"></div>
     </main>
 
-    <footer>
-        <p>&copy; 2026 EduScale. All rights reserved.</p>
-    </footer>
+    <script>
+        const container = document.getElementById("blog-container");
+
+        blogs.forEach(blog => {
+            container.innerHTML += `
+      <div class="course-card">
+        <img src="${blog.image}" class="course-image">
+        <h3 class="course-title">${blog.title}</h3>
+        <p class="course-desc">${blog.description}</p>
+        <a href="/blog/${blog.slug}" class="btn">Read More</a>
+      </div>
+    `;
+        });
+    </script>
+
 </body>
+
 </html>
