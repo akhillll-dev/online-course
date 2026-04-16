@@ -5,3 +5,73 @@
     <loc>https://onlinecourse.shopwithme.in/</loc>
   </url>
 </urlset>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://onlinecourse.shopwithme.in/</loc>
+  </url>
+
+  <url>
+    <loc>https://onlinecourse.shopwithme.in/blog-post?slug=learn-coding-beginners</loc>
+  </url>
+  <url>
+    <loc>https://onlinecourse.shopwithme.in/blog-post?slug=web-development-roadmap</loc>
+  </url>
+  <url>
+    <loc>https://onlinecourse.shopwithme.in/blog-post?slug=python-beginners</loc>
+  </url>
+  <url>
+    <loc>https://onlinecourse.shopwithme.in/blog-post?slug=javascript-complete-guide</loc>
+  </url>
+  <url>
+    <loc>https://onlinecourse.shopwithme.in/blog-post?slug=frontend-developer-roadmap</loc>
+  </url>
+  <url>
+    <loc>https://onlinecourse.shopwithme.in/blog-post?slug=backend-development-guide</loc>
+  </url>
+  <url>
+    <loc>https://onlinecourse.shopwithme.in/blog-post?slug=fullstack-developer-skills</loc>
+  </url>
+  <url>
+    <loc>https://onlinecourse.shopwithme.in/blog-post?slug=machine-learning-introduction</loc>
+  </url>
+  <url>
+    <loc>https://onlinecourse.shopwithme.in/blog-post?slug=ai-for-beginners-guide</loc>
+  </url>
+  <url>
+    <loc>https://onlinecourse.shopwithme.in/blog-post?slug=git-github-guide</loc>
+  </url>
+  <url>
+    <loc>https://onlinecourse.shopwithme.in/blog-post?slug=coding-interview-preparation</loc>
+  </url>
+  <url>
+    <loc>https://onlinecourse.shopwithme.in/blog-post?slug=resume-tips-developers</loc>
+  </url>
+  <url>
+    <loc>https://onlinecourse.shopwithme.in/blog-post?slug=best-coding-projects</loc>
+  </url>
+  <url>
+    <loc>https://onlinecourse.shopwithme.in/blog-post?slug=cloud-computing-basics</loc>
+  </url>
+  <url>
+    <loc>https://onlinecourse.shopwithme.in/blog-post?slug=devops-for-beginners</loc>
+  </url>
+  <url>
+    <loc>https://onlinecourse.shopwithme.in/blog-post?slug=debugging-techniques</loc>
+  </url>
+  <url>
+    <loc>https://onlinecourse.shopwithme.in/blog-post?slug=system-design-basics</loc>
+  </url>
+  <url>
+    <loc>https://onlinecourse.shopwithme.in/blog-post?slug=internship-guide-tech</loc>
+  </url>
+  <url>
+    <loc>https://onlinecourse.shopwithme.in/blog-post?slug=future-of-tech-careers</loc>
+  </url>
+  <url>
+    <loc>https://onlinecourse.shopwithme.in/blog-post?slug=how-to-learn-programming-fast</loc>
+  </url>
+
+</urlset>
