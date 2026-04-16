@@ -24,14 +24,14 @@
 
     <script>
         const container = document.getElementById("blog-container");
-        
+
         blogs.forEach(blog => {
             container.innerHTML += `
       <div class="course-card">
         <img src="${blog.image}" class="course-image">
         <h3 class="course-title">${blog.title}</h3>
         <p class="course-desc">${blog.description}</p>
-        <a href="/blog/${blog.slug}" class="btn">Read More</a>
+       <a href="blog-post.html?slug=${blog.slug}" class="btn">Read More</a>
       </div>
     `;
         });
