@@ -30,7 +30,7 @@
   ],
   "rewrites": [
     {
-      "source": "/blog/",
+      "source": "/blog/:slug",
       "destination": "/client/blog-post.html?slug=:slug"
     },
     {
