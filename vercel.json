@@ -1,0 +1,46 @@
+{
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "index, follow"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/xml"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/blog/",
+      "destination": "/client/blog-post.html?slug=:slug"
+    },
+    {
+      "source": "/blog",
+      "destination": "/client/blog.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/client/$1"
+    }
+  ],
+  "cleanUrls": true
+}
