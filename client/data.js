@@ -37,7 +37,7 @@ const blogs = [
 <p>Python is simple and powerful.</p>
 <h2>Applications</h2>
 <p>Used in AI, web, automation.</p>`
-    }, ,
+    },
     {
         id: 4,
         slug: "javascript-complete-guide",
